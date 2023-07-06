@@ -45,6 +45,9 @@
   - [Usando librerias que soportan TS](#usando-librerias-que-soportan-ts)
   - [Usando librerías que NO soportan TypeScript](#usando-librerías-que-no-soportan-typescript)
 
+## Que es TypeScript
+TypeScript es un superset de JavaScript, pues sobre este lenguaje se añaden características adicionales como por ejemplo el tipado estático que no viene por defecto en JS.
+
 ## Porque usar TypeScript
 Según un estudio, TypeScript puede prevenir hasta un 15% de fallas en tus proyectos. TypeScript va a estar analizando tu código constantemente indicando posibles fallas o mejores maneras de escribir tu código.
 
