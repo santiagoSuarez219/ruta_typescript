@@ -77,6 +77,7 @@ En JavaScript solo te das cuenta de que tienes un error hasta el momento en que 
 TypeScript abarca todo lo que tiene JavaScript, más las nuevas versiones de ECMAScript, y añade análisis estático a nuestro código.
 
 **Analisis de codigo estatico**
+
 `Entre más rápido encuentres un error, más fácil será solucionarlo`
 
 En el libro Software Engineering at Google[1] señalan ciertas capas para detectar fallas en el desarrollo de programas:
