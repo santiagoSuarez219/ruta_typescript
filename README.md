@@ -1,3 +1,93 @@
+# Tabla de contenidos
+- [Tabla de contenidos](#tabla-de-contenidos)
+  - [Porque usar TypeScript](#porque-usar-typescript)
+    - [Percepcion](#percepcion)
+    - [Testimonios](#testimonios)
+  - [TS vs JS](#ts-vs-js)
+  - [Configurando nuestro proyecto](#configurando-nuestro-proyecto)
+  - [Atrapando bugs](#atrapando-bugs)
+    - [Activando poderes de TypeScript en JS](#activando-poderes-de-typescript-en-js)
+  - [El compilador de TypeScript](#el-compilador-de-typescript)
+    - [Compilación a una versión específica](#compilación-a-una-versión-específica)
+    - [Enviando compilacion a una carpeta](#enviando-compilacion-a-una-carpeta)
+  - [TSConfig](#tsconfig)
+    - [Compilacion en TS](#compilacion-en-ts)
+  - [Tipos de datos primitivos](#tipos-de-datos-primitivos)
+    - [La flexibilidad de JavaScript](#la-flexibilidad-de-javascript)
+    - [Controlando la flexibilidad](#controlando-la-flexibilidad)
+    - [tipos inferidos](#tipos-inferidos)
+  - [Numbers](#numbers)
+    - [Operaciones](#operaciones)
+    - [Uso de variables sin inicializar](#uso-de-variables-sin-inicializar)
+    - [Conversion de numeros de tipo string  a tipo number](#conversion-de-numeros-de-tipo-string--a-tipo-number)
+    - [Binarios y Hexadecimales](#binarios-y-hexadecimales)
+  - [Boolean](#boolean)
+    - [Ejemplo](#ejemplo)
+  - [Strings](#strings)
+  - [Arrays](#arrays)
+    - [Tipado de arrays en TypeScript](#tipado-de-arrays-en-typescript)
+  - [Any](#any)
+    - [Importancia del Any](#importancia-del-any)
+    - [Tratar Any como un primitivo](#tratar-any-como-un-primitivo)
+  - [Union Types](#union-types)
+  - [Alias y tipos literales](#alias-y-tipos-literales)
+    - [Tipos literales](#tipos-literales)
+    - [Alias + tipos literales](#alias--tipos-literales)
+  - [Null y Undefined](#null-y-undefined)
+  - [Funciones](#funciones)
+    - [Retorno de funciones](#retorno-de-funciones)
+      - [Retornos tipados en TS](#retornos-tipados-en-ts)
+    - [Objetos en funciones](#objetos-en-funciones)
+    - [Objetos como tipos](#objetos-como-tipos)
+  - [Modulo import y export](#modulo-import-y-export)
+    - [Export](#export)
+    - [Import](#import)
+  - [Usando librerias que soportan TS](#usando-librerias-que-soportan-ts)
+  - [Usando librerías que NO soportan TypeScript](#usando-librerías-que-no-soportan-typescript)
+
+## Porque usar TypeScript
+Según un estudio, TypeScript puede prevenir hasta un 15% de fallas en tus proyectos. TypeScript va a estar analizando tu código constantemente indicando posibles fallas o mejores maneras de escribir tu código.
+
+### Percepcion 
+-  Según Octoverse 2021, una encuesta que realiza GitHub a sus desarrolladores en la que mide la percepción de ciertos lenguajes, TypeScript ha tenido una acogida creciente desde el 2017 hasta el 2021
+
+![05](https://static.platzi.com/media/articlases/Images/cft-1.jfif)
+
+- NPM Trends nos dice, basado en la descarga de paquetes, que TypeScript está siendo usado por muchas librerías y proyectos en todo el ecosistema JavaScript
+
+![06](https://static.platzi.com/media/articlases/Images/cft-2.jfif)
+
+- TypeScript en la encuesta de Stack Overflow de 2020 quedó como el segundo lenguaje más amado por los desarrolladores
+
+![07](https://static.platzi.com/media/articlases/Images/ctf-3.jfif)
+
+### Testimonios
+- Según VueJS, puede evitar varios errores que podrían ir a producción
+- ReactJS nos dice que puede prevenir muchos problemas antes de correr el código
+- Slack indica que tiene una gran integración con el editor, incrementando la productividad de los desarrolladores
+- Airbnb comenta que le ayudó a prevenir hasta un 38% de bugs y que los ingenieros pueden avanzar más rápido y seguro
+
+## TS vs JS
+¿TypeScript es diferente a JavaScript? ¿Un desarrollador en TypeScript es diferente a uno en JavaScript? La respuesta a ambas es sí, sin embargo, no hay una notable diferencia. Uno (TypeScript) se base en el otro (JavaScript) añadiendo elementos para mejorar la detección de bugs y experiencia de desarrollo.
+
+JavaScript ha sufrido un incremento exponencial en su uso, pues se puede usar en Frontend, Backend, IoT, entre otros. No obstante, este no fue creado como un lenguaje maduro desde el inicio, fue con el tiempo que ha ido mejorando hasta lo que es hoy en día.
+
+En JavaScript solo te das cuenta de que tienes un error hasta el momento en que lo ejecutas, sea en el navegador o en un entorno de ejecución como NodeJS, más no antes. Lo que queremos como desarrolladores es obtener retroalimentación lo antes posible para tener la menor cantidad de errores en producción
+
+TypeScript abarca todo lo que tiene JavaScript, más las nuevas versiones de ECMAScript, y añade análisis estático a nuestro código.
+
+**Analisis de codigo estatico**
+`Entre más rápido encuentres un error, más fácil será solucionarlo`
+
+En el libro Software Engineering at Google[1] señalan ciertas capas para detectar fallas en el desarrollo de programas:
+
+- Análisis de código estático: corre en el editor de código en busca de un typo (error en la escritura de un término), llamadas incorrectas a funciones y brinda autocompletado de código
+- Pruebas Unitarias (Unit Tests): se realiza pruebas para verificar si una parte del código hace lo que queremos que ejecute
+- Pruebas de Integración (Integration Tests): vemos como todo el código funciona en conjunto y que se ejecute cómo deseamos
+- Revisión de código (Code Review): se verifica si se ha seguido con las normas, estándares y mejores prácticas establecidas por el equipo
+- 
+[1] Sofware Engineering at Google. Lessons Learned from Programming Over Time - Titus Winters, Tom Manshreck y Hyrum Wright
+
 ## Configurando nuestro proyecto
 1. Crear un proyecto de node
 ```bash
